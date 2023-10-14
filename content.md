@@ -11,7 +11,7 @@ layout: true
     </tr>
     <tr>
       <td style="text-align:right">Universitätsbibliothek Mannheim</td>
-      <td>Böhmak</td>
+      <td>Weil</td>
     </tr>
   </table>
 </div>
@@ -75,6 +75,154 @@ count: false
 ]
 .fourty[
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Codex_Manesse_127r.jpg" /></center>
+]
+]
+
+---
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+]
+.fourty[
+<center>
+<img src="https://cloud.google.com/static/vision/docs/images/sign_text.png" width="300px" />
+<p style="font-size:4pt;">Image by Google, all rights reserved</p>
+</center>
+]
+]
+
+---
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+  - Nummernschilderkennung
+]
+.fourty[
+<center>
+<img src="img/anpr.svg" width="300px" />
+<p style="font-size:4pt;">Image by Achim Raschka, CC BY-SA 3.0</p>
+</center>
+]
+]
+
+---
+
+count: false
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+  - Nummernschilderkennung
+  - Captcha-Umgehung
+]
+.fourty[
+<center>
+<img src="img/captcha.svg" width="300px" />
+<p style="font-size:4pt;">Image by JD, CC BY-SA 2.0</p>
+</center>
+]
+]
+
+---
+
+count: false
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+  - Nummernschilderkennung
+  - Captcha-Umgehung
+  - Schlüsselinformationsextraktion
+]
+.fourty[
+<center>
+<img src="img/deposit.svg" width="300px" />
+<p style="font-size:4pt;">Image by Eluminary, CC BY-SA 2.0</p>
+</center>
+]
+]
+
+---
+
+count: false
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+  - Nummernschilderkennung
+  - Captcha-Umgehung
+  - Schlüsselinformationsextraktion
+  - Handschrifterkennung
+]
+.fourty[
+<center>
+<img src="img/transkribus.svg" width="300px" />
+</center>
+]
+]
+
+---
+
+count: false
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+  - Nummernschilderkennung
+  - Captcha-Umgehung
+  - Schlüsselinformationsextraktion
+  - Handschrifterkennung
+  - Volltextdigitalisierung
+]
+.fourty[
+<center>
+<img src="img/beauvais_0.svg" width="300px" />
+<p style="font-size:4pt;">Image by Uwe Springmann, CC BY-SA 4.0</p>
+</center>
+]
+]
+
+---
+
+count: false
+
+# Einsatzbeispiele
+
+.cols[
+.sixty[
+- typische Anwendungen
+  - Textspotting
+  - Nummernschilderkennung
+  - Captcha-Umgehung
+  - Schlüsselinformationsextraktion
+  - Handschrifterkennung
+  - Volltextdigitalisierung
+]
+.fourty[
+<center>
+<img src="img/beauvais_1.svg" width="300px" />
+<p style="font-size:4pt;">Image by Uwe Springmann, CC BY-SA 4.0</p>
+</center>
 ]
 ]
 
@@ -322,7 +470,7 @@ count: false
 
 # Texterkennung: Zeilenorientierte Ansätze
 
-- zentrales Verfahren des maschinellen Lernens (cf. e.g. [Xing et al. 2010](https://www.cs.sfu.ca/~jpei/publications/Sequence%20Classification.pdf))
+- **Sequenzklassifikation**: zentrales Verfahren des maschinellen Lernens (cf. e.g. [Xing et al. 2010](https://www.cs.sfu.ca/~jpei/publications/Sequence%20Classification.pdf))
 - basierend auf dem **Satz von Bayes**: `\(P(C|E) = \frac{P(E|C)\cdot P(C)}{P(E)}\)`
 - Rezept
     + Man nehme
@@ -362,6 +510,32 @@ count: false
 <center>
 <img src="img/hi.png" style="width:150px"/>
 </center>
+]
+]
+
+---
+
+# Texterkennung: Werkzeuge
+
+.cols[
+.fifty[
+- viele verfügbare **OCR-Engines**
+- [`Tesseract`](https://github.com/tesseract-ocr/tesseract)
+    + ursprünglich von HP entwickelt
+    + von Google übernommen und Open-Source gestellt
+    + viele **mitgelieferte Modelle** (auch für „kleinere“ Sprachen)
+    + ab Version 4 mit neuronalen Netzen
+- [`OCRopus`](https://github.com/tmbdev/ocropy)
+    + entwickelt von Thomas Breul
+    + ebenfalls auf Basis neuronaler Netze
+    + nur **wenige mitgelieferte Modelle**
+    + weitere „Inkarnationen“
+        * [`kraken`](http://kraken.re/), [`Calamari`](https://github.com/Calamari-OCR/calamari)
+]
+.fourty[
+<p style="margin-top:-30px">
+<img src="img/ocr.jpg" height="500px" />
+</p>
 ]
 ]
 
@@ -581,53 +755,6 @@ count: false
 
 ---
 
-class: part-slide
-count: false
-
-# Produktiver Workflow mit Werkzeugen aus OCR-D
-
----
-
-# Produktiver Workflow mit Werkzeugen aus OCR-D
-
-1. Erstellung Bilddigitalisate
-2. Layoutanalyse mit `Eynollah`
-3. ggf. manuelle Korrektur (Regionen und Textfluss)
-4. Texterkennung mit `Tesseract` und `Calamari`
-5. ggf. semiautomatische Textkorrektur
-6. Konvertierung in Basis-TEI mit `mm2tei`
-7. ggf. manuelle Korrekturen (insb. Worttrennung)
-8. tiefergehende TEI-Auszeichnung (log. Struktur)
-
----
-
-# Erstellung Bilddigitalisate
-
-.cols[
-.fifty[
-<img src="img/scan.jpeg" height="400px" />
-]
-.fifty[
-]
-]
-
----
-
-count: false
-
-# Erstellung Bilddigitalisate
-
-.cols[
-.fifty[
-<img src="img/scan.jpeg" height="400px" />
-]
-.fifty[
-<img src="img/nd1967.jpg" height="500px" />
-]
-]
-
----
-
 # Layoutanalyse mit Eynollah
 
 .cols[
@@ -750,27 +877,102 @@ count: false
 
 ---
 
-# Texterkennung
+class: part-slide
+count: false
+
+# Diskussionsimpulse
+
+---
+
+# Diskussionsimpulse: kommerzielle OCR
+
+- verschiedene Anbieter mit unterschliedlichem Hintergrund
+    + lange Zeit **Abbyy** als Platzhirsch
+        * Anschluss verloren?
+    + IT-Firmen (Google CloudVision, Amazon Textract, MS Azure)
+        * Fokus **Textspotting**
+        * hohe Varianzrobustheit
+    + Transkribus
+        * ursprünglich aus der Wissenschaft
+        * Fokus Handschriftenerkennung
+- Probleme
+    + **Anpassungsmöglichkeiten** stark eingeschränkt
+        * Training, Kombination mit anderen Werkzeugen
+    + **Datenhoheit**: „Was passiert mit meinen Eingaben?“
+- Potenziale
+    + enorme Power (Trainingsdaten, Rechnerkapazitäten)
+    + Pflege und Weiterentwicklung „gesichert“
+
+---
+
+# Diskussionsimpulse: Layouterkennung
+
+- größte offene Baustelle
+    + komplexe Layouts
+        * Zeitungen, Magazine, Formulare etc.
+    + Textfluss
+        * Rekonstruktion der intendierten Lesereihenfolge
+    + logische Struktur
+        * seitenübergreifende bzw. diskontinuierliche Phänomene
+    + teilweise Abhängigkeit der Segmentklassifizierung vom Text
+        * richtig wäre: Segmentierung, Texterkennung, Segmentklassifizierung
+- DFG-Projekt *Robuste und performante Verfahren für die Layoutanalyse in OCR-D*
+    + ab November 2023
+
+---
+
+class: part-slide
+
+# Vielen Dank für Ihre Aufmerksamkeit!
+
+<center>
+<a href="https://wrznr.github.io/wikisource-treffen-2023/">wrznr.github.io/wikisource-treffen-2023</a>
+</center>
+
+---
+
+class: part-slide
+count: false
+
+# Produktiver Workflow mit Werkzeugen aus OCR-D
+
+---
+
+# Produktiver Workflow mit Werkzeugen aus OCR-D
+
+1. Erstellung Bilddigitalisate
+2. Layoutanalyse mit `Eynollah`
+3. ggf. manuelle Korrektur (Regionen und Textfluss)
+4. Texterkennung mit `Tesseract` und `Calamari`
+5. ggf. semiautomatische Textkorrektur
+6. Konvertierung in Basis-TEI mit `mm2tei`
+7. ggf. manuelle Korrekturen (insb. Worttrennung)
+8. tiefergehende TEI-Auszeichnung (log. Struktur)
+
+---
+
+# Erstellung Bilddigitalisate
 
 .cols[
 .fifty[
-- viele verfügbare **OCR-Engines**
-- [`Tesseract`](https://github.com/tesseract-ocr/tesseract)
-    + ursprünglich von HP entwickelt
-    + von Google übernommen und Open-Source gestellt
-    + viele **mitgelieferte Modelle** (auch für „kleinere“ Sprachen)
-    + ab Version 4 mit neuronalen Netzen
-- [`OCRopus`](https://github.com/tmbdev/ocropy)
-    + entwickelt von Thomas Breul
-    + ebenfalls auf Basis neuronaler Netze
-    + nur **wenige mitgelieferte Modelle**
-    + weitere „Inkarnationen“
-        * [`kraken`](http://kraken.re/), [`Calamari`](https://github.com/Calamari-OCR/calamari)
+<img src="img/scan.jpeg" height="400px" />
 ]
-.fourty[
-<p style="margin-top:-30px">
-<img src="img/ocr.jpg" height="500px" />
-</p>
+.fifty[
+]
+]
+
+---
+
+count: false
+
+# Erstellung Bilddigitalisate
+
+.cols[
+.fifty[
+<img src="img/scan.jpeg" height="400px" />
+]
+.fifty[
+<img src="img/nd1967.jpg" height="500px" />
 ]
 ]
 
@@ -833,179 +1035,3 @@ count: false
     * Minimalauszeichnung
     * schrittweise manuelle Ergänzung
 
----
-
-class: part-slide
-count: false
-
-# Diskussionsimpulse
-
----
-
-# Diskussionsimpulse: kommerzielle OCR
-
-- verschiedene Anbieter mit unterschliedlichem Hintergrund
-    + lange Zeit **Abbyy** als Platzhirsch
-        * Anschluss verloren?
-    + IT-Firmen (Google CloudVision, Amazon Textract, MS Azure)
-        * Fokus **Textspotting**
-        * hohe Varianzrobustheit
-    + Transkribus
-        * ursprünglich aus der Wissenschaft
-        * Fokus Handschriftenerkennung
-- Probleme
-    + **Anpassungsmöglichkeiten** stark eingeschränkt
-        * Training, Kombination mit anderen Werkzeugen
-    + **Datenhoheit**: „Was passiert mit meinen Eingaben?“
-- Potenziale
-    + enorme Power (Trainingsdaten, Rechnerkapazitäten)
-    + Pflege und Weiterentwicklung „gesichert“
-
----
-
-# Diskussionsimpulse: Double Keying
-
-- **manuelle** Erfassung durch Dienstleister aus „Fernost“ 
-- scheinbar einfachste Form hochqualitative Volltexte zu erhalten
-    + [Deutsches Textarchiv](https://www.deutsches-textarchiv.de)
-- jedoch fehlende Text-Bild-Verknüpfung
-- hohe Kostenfaktoren
-- moralische Fragen
-    + „Klicksklaven“
-
-
----
-
-# Diskussionsimpulse: Layouterkennung
-
-- größte offene Baustelle
-    + komplexe Layouts
-        * Zeitungen, Magazine, Formulare etc.
-    + Textfluss
-        * Rekonstruktion der intendierten Lesereihenfolge
-    + logische Struktur
-        * seitenübergreifende bzw. diskontinuierliche Phänomene
-    + teilweise Abhängigkeit der Segmentklassifizierung vom Text
-        * richtig wäre: Segmentierung, Texterkennung, Segmentklassifizierung
-- DFG-Projekt *Robuste und performante Verfahren für die Layoutanalyse in OCR-D*
-    + ab November 2023
-
----
-
-# Diskussionsimpulse: Beyond OCR
-
-- „Ressourcenarmut“
-    + bei OCR mit viel Mühe aufgeschlossen
-    + weitergehende Annotationen?
-        * PoS-Tagging
-        * NER
-- **Large Language Models** (ChatGPT und Co.)
-
----
-
-class: part-slide
-
-# Vielen Dank für Ihre Aufmekrsamkeit!
-
-<center>
-<a href="https://wrznr.github.io/ocr-ressourcenarme-sprachen-2023/">wrznr.github.io/ocr-ressourcenarme-sprachen-2023</a>
-</center>
-
----
-
-count: false
-
-## Was macht eine hochqualitative Texterkennung aus?
-
-- *gute Segmentierung*: Ist der Text richtig lokalisiert worden?  
-  (kein Text verloren, kein Nicht-Text verwechselt)
-   + scheinbare/fehlende Wörter oder Zeilen
-   + überlappende/abgeschnittene Zeichen
-- *gute OCR*: Sind die Zeichen an sich richtig erkannt worden?
-- *gute Strukturerkennung*: Sind die Blöcke und Zeilen in der richtigen Reihenfolge? Wurden Überschriften markiert? Wurden Kapitel/Artikel separiert?
-- *weitere Analyse*: Schriftauszeichnung, Textnormalisierung
-
-
-<!-- → **OCR-Workflow** -->
-
-<!-- 2. Kasten zu "Zeilensegmentierung", 3. Kasten zu "Struktur + Reihenfolge", Artikelerkennung zu "Artikelseparierung" 
-
-außerdem: 2. Kasten vor dem 1. Kasten
-
--->
-
-![](https://i.imgur.com/6sjl9Yo.png)
-
-
-<!-- Ende WB -->
----
-
-count: false
-
-## Strukturerkennung – warum? 
-
-**Ziel ist Artikelseparierung**
-- Erstellung einer qual. hochwertigen Präsentation
-- Artikelextraktion (in TEI) für Textkorpora
-- siehe [Masterplan Zeitungsdigitalisierung](https://zeitschriftendatenbank.de//fileadmin/user_upload/ZDB/z/Masterplan.pdf), Stufe 3a Artikelseparierung
-
-<!-- und wie machen wir das? -->
-
-**Unser Workflow:**
-
-<!-- und jetzt sind wir endlich hier hinten -->
-
-![](https://i.imgur.com/pdnExJN.png)
-
-<!-- Ende WB -->
-
----
-
-count: false
-
-## Strukturerkennung – was?
-
-<!-- Basis ist Blockreihenfolge aus OCR-D  -->
-
-- Seitenstruktur (Segmentierung + Reihenfolge): PAGE oder ALTO
-- Dokumentstruktur (Titel, Kapitel, Abschnitt, Legende, Seitenzahl, Artikel):  
-  Repräsentation…
-  + nach **DFG-Anwendungsprofil** für METS/ALTO:  
-    `mets:div/@LABEL` + `mets:structLink` (mit ALTO-fileGrp)  
-    → ganze Seiten <!-- oft auch: max. 1 Eintrag pro Seite -->
-  + nach **Europeana-Profil** für METS/ALTO:  
-    `mets:div/mets:fptr` (ALTO-fileID) `./mets:area` (ALTO-IDREF)  
-    → 1..n Segmente unterhalb+oberhalb von Seiten  
-
-Anwendungsbeispiel: [Serbske Nowiny 23.3.1878 (DFG-Viewer)](http://digital.serbski-institut.de/ska-sn23031878_3u4)
-
----
-
-count: false
-
-## Strukturerkennung – wie?
-
-<div class="col-container">
-    <div class="col80">
-        
-- automatische Strukturerkennung:
-  + [regelbasiert](https://github.com/OCR-D/ocrd_segment):  
-    vorherige seitenweise Textblock-Lesereihenfolge + heuristische (visuell-textuelle) Artikelseparierung
-  + [datengetrieben](https://github.com/CITlabRostock/citlab-article-separation-new):  
-    neuronale Netze mit visuell-textueller Eingabe
-<!-- Ende RS -->
-- Unterstützung durch Präsentation: 
-   + Kitodo/DFG-Viewer: bisher nur `mets:structLink`
-   + [TEI-Konvertierung](https://github.com/slub/mets-mods2tei): bisher nur `mets:structLink`
-   + kommerzielle Systeme: `mets:area` / beides
-   + [DDB-Zeitungsportal](https://www.fiz-karlsruhe.de/de/forschung/ddb-zeitungsportal-v-20#projektdaten): noch offen 
-
-    </div>
-    <div class="col20">
-    
-    <img src="https://i.imgur.com/fG2Vvdf.jpg" width="200"/>
-        
-    (Bsp.: <a href="https://dokuwiki.digital-innsbruck.at/structify_archive">Structify</a>)
-
-    </div>
-</div>
