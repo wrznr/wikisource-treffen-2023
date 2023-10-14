@@ -884,9 +884,23 @@ count: false
 
 ---
 
+# Diskussionsimpulse: Wikisource und OCR
+
+- OCR profitiert von Trainingsdaten
+- Wikisource profitiert von OCR
+- **WS-Transkriptionsrichtlinien** erschweren Verwendung als Trainingsdaten
+    + Zeilenfall inkl. Auflösung Worttrennung
+    + stillschweigende Normalisierungen (insb. **ſ**)
+        * Orientierung am DTA möglich?
+    + **Text-Bild-Verknüpfung**
+    + ...
+- Problem ungleich relevanter für **Handschriftenerkennung**
+
+---
+
 # Diskussionsimpulse: kommerzielle OCR
 
-- verschiedene Anbieter mit unterschliedlichem Hintergrund
+- verschiedene Anbieter mit unterschiedlichem Hintergrund
     + lange Zeit **Abbyy** als Platzhirsch
         * Anschluss verloren?
     + IT-Firmen (Google CloudVision, Amazon Textract, MS Azure)
