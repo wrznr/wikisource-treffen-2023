@@ -1,2 +1,2 @@
-# slide-template
-Template for [`remarkjs`](https://remarkjs.com/)-based slides deployed via GitHub Pages
+# Wikisource-Arbeitstreffen 2023
+Slides and materials for the OCR talk
